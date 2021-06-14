@@ -1,0 +1,59 @@
+.login{
+    background:#E9E9E9;
+    height:744px;
+    
+}
+.login-main{
+justify-content:center;
+background:#E9E9E9;
+
+}
+.login-entry{
+height:400px;
+width:400px;
+background: #FFFFFF;
+border-radius: 5px;
+}
+.login-circle{
+    height:110px;
+    width:110px;
+    border-radius:90%;
+    background: #3A7FC2;
+    position:relative;
+    left:140px;
+    bottom:50px;
+    
+}
+.login-avartar img{
+height:60px;
+margin-left:1px;
+margin-top: 14px;
+
+}
+.login-si-text{
+    text-align: center;
+    color: #7E7F7B;
+}
+.signBtn{
+    font-size: 19px;
+    font-weight:500;
+  margin-left: 35%;
+  margin-top: 10%;
+  border-radius:6px;
+    height:45px;
+width:120px;
+background:rgb(255, 255, 255);
+box-shadow: 2px 2px 12px rgb(233, 230, 230);
+transition: .4s ease-in-out;
+}
+.signBtn img{
+    height:40px;
+    margin-left:5px;
+    margin-top: 2px;
+}
+.signBtn:hover{
+    cursor: pointer;
+transition: .4s ease-in;
+ background:rgb(235, 103, 80);
+color: white;
+}

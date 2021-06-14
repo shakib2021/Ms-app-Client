@@ -1,0 +1,101 @@
+.Myorder {
+}
+.MyOrderCard {
+  height: 420px;
+  width: 300px;
+  background: rgb(253, 253, 253);
+  box-shadow: 2px 2px 12px rgb(243, 240, 240);
+  margin-top: 5%;
+  float: left;
+  border-radius: 3px;
+  margin-left: 6%;
+}
+.status {
+  text-align: left;
+  height: 14%;
+  width: 80px;
+  color: black;
+  font-weight: 500;
+  background: rgb(151, 255, 151);
+  padding-bottom: 25px;
+  padding-left: 5px;
+  border-radius: 3px;
+}
+.de-img-sec {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+
+  height: 40%;
+  width: 100%;
+  margin-bottom: 15%;
+}
+.title-sec {
+  height: 20%;
+  width: 100%;
+  margin-bottom: 5px;
+}
+.de-title {
+  height: auto;
+  text-align: left;
+  display: block;
+  color: gray;
+  padding-left: 20px;
+  padding-right: 12px;
+  font-size: 14px;
+}
+.price-sec {
+  height: 5%;
+  width: 100%;
+  margin-top: 9%;
+  margin-bottom: 9%;
+}
+.de-price {
+  margin-top: 3%;
+  text-align: left;
+  display: block;
+  color: rgb(238, 61, 61);
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 23px;
+}
+.details-sec {
+  width: 100%;
+  height: 15%;
+  /* margin-bottom:2%; */
+}
+.btnforDet {
+  margin-left: 7%;
+  margin-right: 3%;
+}
+#cancel {
+  margin-left: 8px;
+}
+.question {
+  font-weight: 500;
+  margin-left: 10px;
+  color: rgb(207, 32, 32);
+  font-size: 21px;
+}
+.ans {
+  display: block;
+  margin-left: 10px;
+  font-size: 17px;
+  min-height: 30px;
+
+  border-radius: 5px;
+  box-shadow: 2px 2px 12px rgb(240, 233, 233);
+  padding: 10px;
+}
+.ans-des {
+  display: block;
+  margin-left: 10px;
+  font-size: 17px;
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 12px rgb(240, 233, 233);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}

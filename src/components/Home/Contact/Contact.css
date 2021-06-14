@@ -1,0 +1,40 @@
+.contact {
+}
+.contact-section {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.contact-logo-name {
+  color: rgba(0, 0, 0, 0.801);
+}
+.contact-company-name {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.705);
+}
+.contact-icon {
+  display: flex;
+}
+.icony {
+  margin-left: 2px;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background: rgb(241, 236, 236);
+}
+.company {
+  color: rgb(48, 47, 47);
+  font-weight: 700;
+}
+.sub-ti {
+  color: gray;
+  font-weight: 5000;
+  cursor: pointer;
+}
+.brand-icon {
+  color: tomato;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.app-logo {
+  height: 55px;
+}
