@@ -44,15 +44,15 @@ const Login= () => {
 
     return (
         <div className="row  login">
-            <div className="col-md-12 w-75 m-auto login-main d-flex col-lg-12 col-sm-12">
+            <div className=" w-75 m-auto login-main d-flex col-lg-12 col-sm-12">
            <div className="login-entry">
              <div className="login-circle">
                <div className="login-avartar"> 
-                 <img  src="/img/avar.png"  />
+                 <img  src="/img/avar.png"  alt=" " />
                </div> 
                  </div> 
                <h4 className="login-si-text">User Sign In</h4>
-            <Bounce><div className="signBtn"  onClick={handleSignIn}> <img src="/img/google.png"   /> </div></Bounce>  
+            <Bounce><div className="signBtn"  onClick={handleSignIn}> <img src="/img/google.png" alt=""  /> </div></Bounce>  
 
            </div>
 
