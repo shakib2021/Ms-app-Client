@@ -136,9 +136,9 @@ Link {
   box-shadow: 2px 2px 12px rgb(235, 201, 201);
   height: 40px;
   width: 140px;
-  background: rgb(22, 148, 233);
-  color: rgb(15, 14, 14);
-  border: 1px solid rgb(99, 6, 250);
+  background: rgb(231, 70, 70);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
