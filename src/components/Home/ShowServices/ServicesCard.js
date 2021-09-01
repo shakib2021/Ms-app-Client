@@ -7,7 +7,7 @@ import InfoIcon from '@material-ui/icons/Info';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 const ServicesCard = (props) => {
-let {serviceTitle,price,img,description,_id,category} =props.cardInfo;
+let {serviceTitle,price,img,_id,category} =props.cardInfo;
     return (
         <Fade bottom>
             <>
