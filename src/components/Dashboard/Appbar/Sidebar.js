@@ -1,64 +1,103 @@
 import React, { useContext, useState, useEffect } from "react";
-
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
-import HomeIcon from '@material-ui/icons/Home';
-import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
-import RateReviewIcon from '@material-ui/icons/RateReview';
-import AddIcon from '@material-ui/icons/Add';
-// import AdminPanelSettingsIcon from '@material-ui/icons/AdminPanelSettings';
 import { userContext } from '../../../App';
-
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 const Sidebar = () => {
-   let [loggedInUser, setLoggedInUser] = useContext(userContext)
+  let [loggedInUser, setLoggedInUser] = useContext(userContext)
 
-   let [isAdmin, setIsAdmin] = useState([])
-   useEffect(() => {
-      fetch("https://obscure-woodland-45973.herokuapp.com/findAdmin")
-         .then(res => res.json())
-         .then(data => {
-            setIsAdmin(data)
-
-
-         })
-   }, [])
-   let adminVai = isAdmin.find(data => data.email == loggedInUser.email)
-
-   return (
-      <div className="sidebar col-lg-2  col-md-2 ">
-         {/* <div className="section-bar">
-  <h3 className="    sec-Title">Dashboard</h3>
-
-       </div> */}
-         {adminVai ? <>
-            <div className="item">
-               <Link className="link" title="home" to="/"><div className="item-1">< HomeIcon className="item-padd" /> <span className="item-hide">HOME</span> </div></Link>
-               <Link className="link" title="my order" to="/myorder"><div className="item-1">< BookmarkBorderIcon className="item-padd" /> <span className="item-hide">MY ORDER</span></div></Link>
-               <Link className="link" title="review" to="/review"><div className="item-1">< RateReviewIcon className="item-padd" /><span className="item-hide">REVIEW</span></div></Link>
-               <Link className="link" title="add service" to="/addservice"><div className="item-1"><  AddIcon className="item-padd" /><span className="item-hide">ADD SERVICE</span></div></Link>
-               <Link className="link" title="Make Admin" to="/makeAdmin"><div className="item-1">< AddIcon className="item-padd" /><span className="item-hide">MAKE ADMIN</span></div></Link>
-               <Link className="link" title="/manageOrders" to="/manageOrders"><div className="item-1">< FormatListBulletedIcon className="item-padd" /><span className="item-hide">MANAGE ORDERS</span></div></Link>
-               <Link className="link" title="logout" to="/logout"><div className="item-1">< ExitToAppIcon className="item-padd" /><span className="item-hide">LOG OUT</span></div></Link>
-            </div>
-
-         </> : <>
-
-            <div className="item">
-               <Link className="link" title="home" to="/"><div className="item-1">< HomeIcon className="item-padd" /> <span className="item-hide">HOME</span> </div></Link>
-               <Link className="link" title="my order" to="/myorder"><div className="item-1">< BookmarkBorderIcon className="item-padd" /> <span className="item-hide">MY ORDER</span></div></Link>
-               <Link className="link" title="review" to="/review"><div className="item-1">< RateReviewIcon className="item-padd" /><span className="item-hide">REVIEW</span></div></Link>
-
-               <Link className="link" title="logout" to="/logout"><div className="item-1">< ExitToAppIcon className="item-padd" /><span className="item-hide">LOG OUT</span></div></Link>
-            </div>
+  let [isAdmin, setIsAdmin] = useState([])
+  useEffect(() => {
+    fetch("https://obscure-woodland-45973.herokuapp.com/findAdmin")
+      .then(res => res.json())
+      .then(data => {
+        setIsAdmin(data)
 
 
-         </>}
+      })
+  }, [])
+  let adminVai = isAdmin.find(data => data.email == loggedInUser.email)
 
-      </div>
+  let handleLogOut = () => {
+    setLoggedInUser({})
+  }
+  return (
+    <div>
+      <nav className="navbar  navbar-expand-lg navbar-light  ">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="/">MS</a>
+          <button className="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ">
+              {adminVai ? <>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/"> <a className="nav-link" href="/">Home</a></Link>
 
-   );
+                </li>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/myorder"> <a className="nav-link" href="/dashboard"> MyOrder</a></Link>
+
+                </li>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/review"> <a className="nav-link" href="/review"> Review</a></Link>
+
+                </li>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/addservice"> <a className="nav-link" href="/addservice">AddService</a></Link>
+                </li>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/makeAdmin"> <a className="nav-link" href="/makeAdmin"> MakeAdmin</a></Link>
+
+                </li>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/manageOrders"> <a className="nav-link" href="/manageOrders">AllOrder</a></Link>
+
+                </li>
+                <li classNameNme="nav-item">
+                  {loggedInUser.email ? <Link style={{ textDecoration: 'none' }} onClick={handleLogOut} to="/login"> <a className="nav-link" href="/login">LogOut</a></Link> : <Link style={{ textDecoration: 'none' }} to="/login"> <a className="nav-link" href="#">Login</a></Link>}
+                </li>
+                {loggedInUser.email && <>
+                  <img className="logPhoto" src={loggedInUser.photoURL} alt="fu#k" />
+                </>}
+
+
+              </> : <>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/"> <a className="nav-link" href="/">Home</a></Link>
+
+                </li>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/myorder"> <a className="nav-link" href="/dashboard"> MyOrder</a></Link>
+
+                </li>
+                <li className="nav-item">
+                  <Link style={{ textDecoration: 'none' }} to="/review"> <a className="nav-link" href="/review"> Review</a></Link>
+
+                </li>
+
+
+                <li classNameNme="nav-item">
+                  {loggedInUser.email ? <Link style={{ textDecoration: 'none' }} onClick={handleLogOut} to="/login"> <a className="nav-link" href="/login">LogOut</a></Link> : <Link style={{ textDecoration: 'none' }} to="/login"> <a className="nav-link" href="#">Login</a></Link>}
+                </li>
+                {loggedInUser.email && <>
+                  <img className="logPhoto" src={loggedInUser.photoURL} alt="fu#k" />
+                </>}
+
+
+              </>
+
+
+
+              }
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  );
 };
 
 export default Sidebar;

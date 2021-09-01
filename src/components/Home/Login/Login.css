@@ -1,68 +1,63 @@
-.login{
+.login {
     /* background:#E9E9E9; */
-    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100');
-  
+    background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=100");
+
     background-size: cover;
-    height:757px;
+    height: 757px;
     background-repeat: no-repeat;
-    
 }
-.login-main{
-justify-content:center;
+.login-main {
+    justify-content: center;
+}
+.login-entry {
+    height: 400px;
+    width: 400px;
 
-
+    backdrop-filter: blur(9px) saturate(138%);
+    -webkit-backdrop-filter: blur(9px) saturate(138%);
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+    border-radius: 5px;
 }
-.login-entry{
-height:400px;
-width:400px;
-
-backdrop-filter: blur(9px) saturate(138%);
--webkit-backdrop-filter: blur(9px) saturate(138%);
-background-color: rgba(255, 255, 255, 0);
-border-radius: 12px;
-border: 1px solid rgba(209, 213, 219, 0.3);
-border-radius: 5px;
+.login-circle {
+    height: 110px;
+    width: 110px;
+    border-radius: 90%;
+    background: #3a7fc2;
+    position: relative;
+    left: 140px;
+    bottom: 50px;
 }
-.login-circle{
-    height:110px;
-    width:110px;
-    border-radius:90%;
-    background: #3A7FC2;
-    position:relative;
-    left:140px;
-    bottom:50px;
-    
+.login-avartar img {
+    height: 60px;
+    margin-left: 1px;
+    margin-top: 14px;
 }
-.login-avartar img{
-height:60px;
-margin-left:1px;
-margin-top: 14px;
-
-}
-.login-si-text{
+.login-si-text {
     text-align: center;
-    color: #7E7F7B;
+    color: #7e7f7b;
 }
-.signBtn{
+.signBtn {
     font-size: 19px;
-    font-weight:500;
-  margin-left: 35%;
-  margin-top: 10%;
-  border-radius:6px;
-    height:45px;
-width:120px;
-background:rgb(255, 255, 255);
+    font-weight: 500;
+    margin-left: 35%;
+    margin-top: 10%;
+    border-radius: 6px;
+    height: 45px;
+    width: 120px;
+    background: rgb(255, 255, 255);
 
-transition: .4s ease-in-out;
+    transition: 0.4s ease-in-out;
 }
-.signBtn img{
-    height:40px;
-    margin-left:5px;
+.signBtn img {
+    height: 40px;
+    margin-left: 5px;
     margin-top: 2px;
 }
-.signBtn:hover{
+.signBtn:hover {
     cursor: pointer;
-transition: .4s ease-in;
- background:rgb(235, 103, 80);
-color: white;
+    transition: 0.4s ease-in;
+    background: rgb(235, 103, 80);
+    color: white;
 }

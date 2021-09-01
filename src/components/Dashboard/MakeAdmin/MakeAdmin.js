@@ -1,5 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { userContext } from '../../../App';
+import React, { useState } from 'react';
+
 
 import './MakeAdmin.css';
 import Sidebar from '../Appbar/Sidebar';
@@ -9,76 +9,66 @@ import { useForm } from "react-hook-form";
 // import AdminPanelSettingsIcon from '@material-ui/icons/AdminPanelSettings';
 
 const MakeAdmin = () => {
-  let [loggedInUser,setLoggedInUser]=useContext(userContext)
 
-const { register, handleSubmit, formState: { errors } } = useForm();
-const onSubmit = data => {
-let Email={
-  email:data.email
-}
+  let [makeR, setRe] = useState(false)
 
-  swal({
-            title: "Are You Sure To Make Admin?",
-           icon: "warning",
-            buttons: true,
-            dangerMode: true,
-          })
-          .then((willSubmit) => {
-            if (willSubmit) {
-             fetch("https://obscure-woodland-45973.herokuapp.com/addadmin",{
-              method:'POST',
-              headers:{"content-type":"application/json"},
-              body:JSON.stringify(Email)
-               
-          })
-    .then(response =>response.json())
-    .then(result=>  {
-        if(result){
-            swal("Huh! Make Admin Successfully", {
-                icon: "success",
-              });
-        }
-       
-    })
-             
-            } 
-          });
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => {
+    let Email = {
+      email: data.email
     }
 
-    document.title="Make admin || MS"
+    swal({
+      title: "Are You Sure To Make Admin?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+      .then((willSubmit) => {
+        if (willSubmit) {
+          setRe(true)
 
-    return (
-        <div  className="    row     makeAdmin">
-           <div className="section-bar">
-  <div className="title-sec">
-    <span >MAKE ADMIN</span>
-</div>
-<div className="loggedIn">
-<img  title={loggedInUser.displayName} className="lo-img"  src={loggedInUser.photoURL} alt=""/>
-</div>
-</div>
-            <div className="  col-lg-2 col-md-2">
-<Sidebar></Sidebar>
-            </div>
-<div className="admin-section col-lg-10 col-md-10">
-  
-  <div className="row w-75 m-auto">
-      <div className="admin-form shadow-md">
-      <form onSubmit={handleSubmit(onSubmit)}>
-          
-          <input  required   {...register("email")}   id="exampleFormControlInput1"  className="input2  shadow-md"    type="email"   /><br/>
-   <button onClick={handleSubmit} type="submit"   class="admBtn    shadow-md"> <AddIcon  />  Make admin</button>
-          </form>
-  
+          fetch("https://obscure-woodland-45973.herokuapp.com/addadmin", {
+            method: 'POST',
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify(Email)
+
+          })
+            .then(response => response.json())
+            .then(result => {
+              if (result) {
+                setRe(false)
+                swal("Huh! Make Admin Successfully", {
+                  icon: "success",
+                });
+              }
+
+            })
+
+        }
+      });
+  }
+
+  document.title = "Make admin || MS"
+
+  return (
+    <div className=" row makeAdmin">
+
+      <Sidebar></Sidebar>
+     <h2 className="text-center text-danger mt-3">Make Admin</h2>
+
+      <div className="row mt-0">
+        <div className="col-xl-5  col-lg-8 offset-lg-3 col-md-12 m-auto">
+          <div className="admin-form shadow-md">
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input required   {...register("email")} id="exampleFormControlInput1" className="input2 w-95 shadow-md" type="email" /><br />
+              <button onClick={handleSubmit} type="submit" class="admBtn    shadow-md"> <AddIcon />  {makeR ? "Plz Wait..." : "Make admin"}</button>
+            </form>
+          </div>
+        </div>
       </div>
-  </div>
-{/*  */}
-
-{/*  */}
-
-        </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default MakeAdmin;

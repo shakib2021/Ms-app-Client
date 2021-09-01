@@ -22,7 +22,8 @@ const ShowServices = () => {
 
     </>}
     <div className="row">
-      {servicesData.map(info => <div className="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+     {servicesData &&<h1 className="text-center mt-5">Products</h1>} 
+      {servicesData.map(info => <div className="col-lg-3 col-xl-2 col-md-4 col-sm-6 col-xs-12">
         <ServicesCard cardInfo={info}></ServicesCard>
       </div>
       )}

@@ -7,44 +7,40 @@ import InfoIcon from '@material-ui/icons/Info';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 const ServicesCard = (props) => {
-let {serviceTitle,price,img,_id,category} =props.cardInfo;
+    let { serviceTitle, price, img, _id, category } = props.cardInfo;
     return (
         <Fade bottom>
-            <>
-            
+           
+            <div className="card ">
 
-    {/* end */}
-            </>
-<div className="card ">
-    
-    <div className="more">
-    <div className="card-hori"><MoreHorizIcon/></div>
-    <div className="card-hover">
-        <div className="card-details"> <span className="details-text"><InfoIcon/> Product Details</span>  </div>
-        <div className="card-details"> <span className="details-text"><FavoriteIcon/> Add to Whitelist</span> </div>  
-        <div className="card-details"> <span className="details-text"><ReportProblemIcon/> Report This</span>  </div>
-    </div>
-    </div>
-    <button className="category">{category}</button>
+                <div className="more">
+                    <div className="card-hori"><MoreHorizIcon /></div>
+                    <div className="card-hover">
+                        <div className="card-details"> <span className="details-text"><InfoIcon /> Product Details</span>  </div>
+                        <div className="card-details"> <span className="details-text"><FavoriteIcon /> Add to Whitelist</span> </div>
+                        <div className="card-details"> <span className="details-text"><ReportProblemIcon /> Report This</span>  </div>
+                    </div>
+                </div>
+                <button className="category">{category}</button>
 
-    
-          <div className="card-img">
-<img  src={img} alt="wait.." />
-          <div className="title">
-<Link className="link-id" to={`/booking/${_id}`}>   
 
-             <span className="title-text" title={serviceTitle}  >{serviceTitle}</span><br></br>
-             <span className="price">${price}</span>
-          </Link>  
+                <div className="card-img">
+                    <img src={img} alt="wait.." />
+                    <div className="title">
+                        <Link className="link-id" to={`/booking/${_id}`}>
 
-          </div>
-    
+                            <span className="title-text" title={serviceTitle}  >{serviceTitle}</span><br></br>
+                            <span className="price">${price}</span>
+                        </Link>
 
-    
-          </div>
-        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
         </Fade>
-            
+
     );
 };
 

@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 const MyorderCard = (props) => {
   let { Name, Mobile, Email, status, _id, Address, ServiceTitle, Price, Description, img } = props.order;
   //  let [checkStatus,setCheckStatus]=useState()
- let handleDelete = (id) => {
+  let handleDelete = (id) => {
 
     if (id == _id) {
 
@@ -36,42 +36,28 @@ const MyorderCard = (props) => {
           swal("Your Order is safe!");
         }
       });
-
-
-
-
-
-  }
+ }
 
 
   return (
     <>
-      <div div className="MyOrderCard mb-5">
+      <div div className="MyOrderCard  mb-3">
         <div className="de-img-sec">
           <p className="status"> {status}</p>
           <img src={img} alt="product" />
         </div>
-        <div className="title-sec">
-          <span className="de-title">{ServiceTitle}</span>
-        </div>
-        <div className="price-sec">
-          <span className="de-price">{Price}$</span>
-        </div>
-        <div className="details-sec">
+        <h3 className="ml">{Price}</h3>
+        <p className="ml">{ServiceTitle}</p>
+      <div className="details-sec mt-5">
           {/* <!-- Button trigger modal --> */}
           <div className="btnforDet">
             <button onClick={() => props.handleDetails(_id)} type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
               Order Details
             </button>
-
-
-
-            <button onClick={() => handleDelete(_id)} type="button" id="cancel" className="btn btn-danger" >
+<button onClick={() => handleDelete(_id)} type="button" id="cancel" className="btn btn-danger" >
               Cancel Order
             </button>
-
-
-          </div>
+  </div>
 
 
 

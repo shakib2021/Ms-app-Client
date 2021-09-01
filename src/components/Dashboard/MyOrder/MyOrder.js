@@ -29,74 +29,65 @@ const MyOrder = () => {
   }
   document.title = "My Orders | Ms"
   return (
-    <div className="row    Myorder ">
-      <div className="section-bar">
-        <div className="title-sec">
-          <span >MY ORDERS</span>
-        </div>
-        <div className="loggedIn">
-          <img title={loggedInUser.displayName} className="lo-img" src={loggedInUser.photoURL} alt="" />
-        </div>
-      </div>
-      <div className="col-md-2 col-lg-2 col-sm-12 mb-5">
-        <Sidebar></Sidebar>
-      </div>
+    <div className="row    Myorder mt-0 ">
+     <Sidebar></Sidebar>
+     <h2 className="text-center text-danger">My Order</h2>
+  
+        <div className="row">
+ {orderData.length == 0 && <div className="text-center mt-5 mb-5 h-100">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </div>}
 
-      <div className="col-lg-10 col-md-10 col-sm-10 ">
-        {orderData.length == 0 && <div class="text-center mt-5 mb-5 h-100">
-          <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </div>}
-        {
-          orderData.map(order => <>
-            <MyorderCard handleDetails={handleDetails} order={order}></MyorderCard>
+          { orderData.map(order => <>
+              <div className=" col-lg-4 col-xl-3 col-md-6 col-sm-6 ">
 
-            {/* <!-- Modal --> */}
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-dialog-scrollable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">ORDER DETAIL</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <p className="question"> Ordered by</p>
-                    <p className="ans">{OrderDetails.Name}</p>
+                <MyorderCard handleDetails={handleDetails} order={order}></MyorderCard>
+              </div>
+              {/* <!-- Modal --> */}
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">ORDER DETAIL</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p className="question"> Ordered by</p>
+                      <p className="ans">{OrderDetails.Name}</p>
 
-                    <p className="question"> Ordered Mobile</p>
-                    <p className="ans">{OrderDetails.Mobile}</p>
+                      <p className="question"> Ordered Mobile</p>
+                      <p className="ans">{OrderDetails.Mobile}</p>
 
-                    <p className="question"> Ordered Email</p>
-                    <p className="ans">{OrderDetails.Email}</p>
+                      <p className="question"> Ordered Email</p>
+                      <p className="ans">{OrderDetails.Email}</p>
 
-                    <p className="question"> Ordered Address</p>
-                    <p className="ans">{OrderDetails.Address}</p>
+                      <p className="question"> Ordered Address</p>
+                      <p className="ans">{OrderDetails.Address}</p>
 
-                    <p className="question"> Product Name</p>
-                    <p className="ans-des">{OrderDetails.ServiceTitle}</p>
+                      <p className="question"> Product Name</p>
+                      <p className="ans-des">{OrderDetails.ServiceTitle}</p>
 
-                    <p className="question"> Product Image </p>
-                    <img className="ans-img" src={OrderDetails.img} alt="" />
+                      <p className="question"> Product Image </p>
+                      <img className="ans-img" src={OrderDetails.img} alt="" />
 
-                    <p className="question"> Product Description</p>
-                    <p className="ans-des">{OrderDetails.Description}</p>
+                      <p className="question"> Product Description</p>
+                      <p className="ans-des">{OrderDetails.Description}</p>
 
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    <div className="modal-footer">
+                      <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
 
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </>
-          )
-        }
-
-
-
-      </div>
+            </>
+            )
+          }
+   </div>
+    
     </div>
   );
 };
