@@ -1,6 +1,3 @@
-.showServices {
-  margin-left: 5%;
-}
 .services-skelton {
   float: left;
   margin-top: 2%;
@@ -31,11 +28,8 @@
 .card {
   margin-top: 5px;
   background: rgb(253, 253, 253);
-  float: left;
   box-shadow: 2px 2px 12px rgb(243, 240, 240);
   height: 400px;
-  width: 270px;
-  margin-left: 10px;
   transition: 0.3s;
 }
 
@@ -62,7 +56,7 @@
 }
 .card-hover {
   height: 200px;
-  width: 200px;
+  /* width: 200px;s */
   background: rgb(243, 243, 243);
   position: absolute;
   left: 30%;

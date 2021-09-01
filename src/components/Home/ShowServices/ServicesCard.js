@@ -15,7 +15,7 @@ let {serviceTitle,price,img,description,_id,category} =props.cardInfo;
 
     {/* end */}
             </>
-<div className="card">
+<div className="card ">
     
     <div className="more">
     <div className="card-hori"><MoreHorizIcon/></div>

@@ -49,7 +49,7 @@ const HeaderInfo = () => {
   
   :<SwiperSlide className="Slider">
   <div className="row w-75 m-auto slideM">
-  <div className="col-lg-6 slide-text">
+  <div className="col-lg-6 slide-text ">
    <h3 className="slideTitle">{data.serviceTitle}</h3>
       <h3 className="slidePrice">{data.price}$</h3>
 <Link className="link-id" to={`/booking/${data._id}`}>   

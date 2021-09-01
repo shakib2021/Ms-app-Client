@@ -29,7 +29,7 @@ const MyOrder = () => {
   }
   document.title = "My Orders | Ms"
   return (
-    <div className="row    Myorder">
+    <div className="row    Myorder ">
       <div className="section-bar">
         <div className="title-sec">
           <span >MY ORDERS</span>
@@ -38,12 +38,12 @@ const MyOrder = () => {
           <img title={loggedInUser.displayName} className="lo-img" src={loggedInUser.photoURL} alt="" />
         </div>
       </div>
-      <div className="col-md-2 col-lg-2 col-sm-12 ">
+      <div className="col-md-2 col-lg-2 col-sm-12 mb-5">
         <Sidebar></Sidebar>
       </div>
 
-      <div className="col-lg-10 col-md-10 col-sm-10">
-        {orderData.length == 0 && <div class="text-center mt-5 mb-5">
+      <div className="col-lg-10 col-md-10 col-sm-10 ">
+        {orderData.length == 0 && <div class="text-center mt-5 mb-5 h-100">
           <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
           </div>
@@ -84,7 +84,7 @@ const MyOrder = () => {
 
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                   </div>
                 </div>
