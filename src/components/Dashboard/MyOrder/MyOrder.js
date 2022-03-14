@@ -29,22 +29,21 @@ const MyOrder = () => {
   }
   document.title = "My Orders | Ms"
   return (
-    <div className="row    Myorder mt-0 ">
+    <div className="row px-5  container  mt-0 ">
      <Sidebar></Sidebar>
-     <h2 className="text-center text-danger">My Order</h2>
+     <h2 className="text-center text-danger text-4xl mt-6 mb-6">My Order</h2>
   
-        <div className="row">
+        <div className="  overflow-hidden">
  {orderData.length == 0 && <div className="text-center mt-5 mb-5 h-100">
             <div class="spinner-border" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
           </div>}
-
+<div  className='grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-5'>
           { orderData.map(order => <>
-              <div className=" col-lg-4 col-xl-3 col-md-6 col-sm-6 ">
-
+         
                 <MyorderCard handleDetails={handleDetails} order={order}></MyorderCard>
-              </div>
+           
               {/* <!-- Modal --> */}
               <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable">
@@ -86,6 +85,7 @@ const MyOrder = () => {
             </>
             )
           }
+          </div>
    </div>
     
     </div>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { userContext } from '../../App';
 import Sidebar from './Appbar/Sidebar';
-import './Dashboard.css'
+import './Dashboard.css';
 const Dashboard = () => {
 
   let [userOrders, setUserOrders] = useState([])
@@ -19,7 +19,7 @@ const Dashboard = () => {
   }, [])
   document.title = "Dashboard || MS"
 
-  return (<div className="row dashboard">
+  return (<div className="row container overflow-hidden dashboard">
     <Sidebar></Sidebar>
 
     <div className="col-lg-12 m-auto dash">

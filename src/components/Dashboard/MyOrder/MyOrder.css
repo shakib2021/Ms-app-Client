@@ -4,8 +4,9 @@
   background-image: radial-gradient(at 47% 33%, hsl(180, 4%, 74%) 0, transparent 59%),
     radial-gradient(at 82% 65%, hsl(197.78, 73%, 13%) 0, transparent 55%);
 }
+
 .MyOrderCard {
-  height: 480px;
+  height: 500px;
 
   backdrop-filter: blur(0px) saturate(200%);
   -webkit-backdrop-filter: blur(0px) saturate(200%);
@@ -14,6 +15,20 @@
   border: 1px solid rgba(209, 213, 219, 0.3);
   border-radius: 3px;
 }
+
+.st {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  /* fallback */
+  max-height: 32px;
+  /* fallback */
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
 .status {
   text-align: left;
   height: 14%;
@@ -25,6 +40,7 @@
   padding-left: 5px;
   border-radius: 3px;
 }
+
 .de-img-sec {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -33,6 +49,7 @@
   width: 100%;
   margin-bottom: 15%;
 }
+
 .ml {
   margin-left: 7%;
   color: rgb(221, 59, 59);
@@ -43,19 +60,23 @@
   height: 15%;
   /* margin-bottom:2%; */
 }
+
 .btnforDet {
   margin-left: 7%;
   margin-right: 3%;
 }
+
 #cancel {
   margin-left: 8px;
 }
+
 .question {
   font-weight: 500;
   margin-left: 10px;
   color: rgb(207, 32, 32);
   font-size: 21px;
 }
+
 .ans {
   display: block;
   margin-left: 10px;
@@ -66,6 +87,7 @@
   box-shadow: 2px 2px 12px rgb(240, 233, 233);
   padding: 10px;
 }
+
 .ans-des {
   display: block;
   margin-left: 10px;

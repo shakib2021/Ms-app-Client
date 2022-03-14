@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/swiper.min.css";
-import "swiper/components/pagination/pagination.min.css"
-import "./ShowReview.css";
+import React, { useEffect, useState } from "react";
+import "swiper/components/pagination/pagination.min.css";
 // import Swiper core and required modules
 import SwiperCore, {
   Pagination
 } from 'swiper/core';
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/swiper.min.css";
+import "./ShowReview.css";
 
 // install Swiper modules
 SwiperCore.use([Pagination]);
@@ -58,10 +58,11 @@ const ShowReview = () => {
            <img  src={review.avartar}  alt=""/>
          </div>
          <div className="name-cli">
-     <p className="Dname-cli">{review.name}</p>
+     <p className="Dname-cli mb-2">{review.name}</p>
      <small className="Date-cli">{review.Redate}</small>
+     <p className="message-cli ">{review.description}</p>
+
          </div>
-         <p className="message-cli">{review.description}</p>
          </div>
    
         </div>

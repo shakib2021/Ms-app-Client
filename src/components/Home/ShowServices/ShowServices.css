@@ -12,23 +12,28 @@
   transition: 0.3s ease-in-out;
   box-shadow: 2px 2px 9px rgb(129, 127, 127);
 }
+
 .more {
   height: 6%;
   margin-left: 90%;
 }
+
 .card-hori {
   height: 6%;
   /* margin-left:90%; */
 }
+
 .card-hori:hover {
   cursor: pointer;
   height: 6%;
   color: rgb(240, 182, 182);
   border-radius: 360%;
 }
+
 .more:hover .card-hover {
   display: block;
 }
+
 .card-hover {
   height: 200px;
   /* width: 200px;s */
@@ -40,21 +45,39 @@
   display: none;
   box-shadow: 2px 2px 9px rgb(243, 220, 220);
 }
+
 .card-details {
   margin-top: 5%;
   padding: 5px;
   transition: 0.3s ease-in-out;
 }
+
 .details-text {
   padding-left: 5px;
   color: black;
   font-weight: 600;
 }
+
 .card-details:hover {
   transition: 0.3s ease-in-out;
   cursor: pointer;
   background: rgb(255, 255, 255);
 }
+
+
+.st {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  /* fallback */
+  max-height: 32px;
+  /* fallback */
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
 .category {
   height: auto;
   width: auto;
@@ -67,7 +90,7 @@
 
 .card-img {
   margin-top: 5px;
-  height: 35.6%;
+  height: 50%;
   width: 100%;
 }
 
@@ -76,9 +99,11 @@ img {
   width: 100%;
   object-fit: contain;
 }
+
 .title {
   margin-top: 18px;
 }
+
 .title-text {
   padding-left: 20px;
   color: rgb(0, 0, 0);
@@ -87,9 +112,11 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
 .title-text:hover {
   text-decoration: underline;
 }
@@ -103,6 +130,7 @@ img {
   font-size: 16px;
   color: gray;
 }
+
 .card-footer {
   height: 30%;
   margin-top: 53%;
@@ -120,6 +148,7 @@ img {
   margin-left: 5%;
   font-size: 29px;
 }
+
 .link-id {
   text-decoration: none;
 }
